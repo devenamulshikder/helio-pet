@@ -22,7 +22,7 @@
         <a href="#"> ENG </a>
         <a href="#">USD</a>
         <div>
-          <i class="fa-solid fa-cart-shopping"></i>
+          <i id="cart-icon" class="fa-solid fa-cart-shopping"></i>
         </div>
       </div>
     </header>
@@ -81,16 +81,16 @@
             </div>
           </div>
           <div class="price">
-            <span class="original-price">$369.00</span>
-            <span class="current-price">$249.00</span>
+            <span id="originalPrice" class="original-price">$369.00</span>
+            <span id="newPrice" class="current-price">$249.00</span>
           </div>
 
           <div class="add-to-cart">
-            <button class="cart-button">Add to Cart</button>
+            <button id="add-to-cart" class="cart-button">Add to Cart</button>
             <div class="">
-              <button class="cart-icon1">-</button>
-              <span class="quantity-value">1</span>
-              <button class="cart-icon2">+</button>
+              <button id="minus" class="cart-icon1">-</button>
+              <span id="cart-number" class="quantity-value">1</span>
+              <button id="plus" class="cart-icon2">+</button>
             </div>
           </div>
           <div>
@@ -106,7 +106,53 @@
           </div>
         </div>
       </div>
+
+      <!-- Cart Overlay -->
+      <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-modal">
+          <!-- Cart Sidebar -->
+          <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+              <h2>Your cart</h2>
+              <button id="closeCartBtn" class="close-btn">&times;</button>
+            </div>
+            <!-- Cart Item -->
+            <div class="cart-item">
+              <img
+                src="./assets/small3.png"
+                alt="Product Image"
+                class="cart-img"
+              />
+              <div class="item-details">
+                <p><strong>Hello Pet Device™</strong></p>
+                <p>Color: Midnight Blue</p>
+                <p>Size: L</p>
+              </div>
+              <div class="item-actions">
+                <div class="quantity-control">
+                  <button id="minusQty">-</button>
+                  <span id="cartQuantity">1</span>
+                  <button id="plusQty">+</button>
+                </div>
+                <button class="remove-btn">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Total -->
+            <div class="cart-total">
+              <p>Total: $<span id="totalPrice">249.00</span></p>
+            </div>
+
+            <!-- Checkout Button -->
+            <button class="checkout-button">Checkout</button>
+          </div>
+        </div>
+      </div>
     </main>
     <footer></footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>
